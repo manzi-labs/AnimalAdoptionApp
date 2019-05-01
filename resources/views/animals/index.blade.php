@@ -15,7 +15,8 @@
     </span>
 </div>
 {!! Form::close() !!}
-
+    <br>
+    <br>
     <div class="container">
     @if(count($animals) > 0)
         <div class='card-columns'>

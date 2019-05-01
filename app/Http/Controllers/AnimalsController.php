@@ -15,8 +15,16 @@ class AnimalsController extends Controller
     public function index()
     {
         //
-        $animals = Animal::orderBy('name', 'asc')->get();
-        return view('animals.index')->with('animals', $animals);
+        $search = \Request::get('search');
+        if($search != ""){
+            $animals = Animal::where('species', 'like','%'.$search);
+            array_push($animals, Animal::where('name', 'like','%'.$search));
+            return view('animals.index')->with('animals', $animals);
+        }
+        else{
+            $animals = Animal::orderBy('name', 'asc')->get();
+            return view('animals.index')->with('animals', $animals);
+        }
     }
 
     public function search(Request $request){
