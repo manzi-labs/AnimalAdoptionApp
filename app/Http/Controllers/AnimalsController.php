@@ -63,12 +63,12 @@ class AnimalsController extends Controller
         //create animal
         $animal = new Animal;
 
-        $animal->name = $request->input('name');
+        $animal->name = ucwords($request->input('name'));
         $animal->age = $request->input('age');
         $animal->sex = $request->input('sex'){0};
         $animal->about = $request->input('about');
         $animal->status = 0;
-        $animal->species = $request->input('species');
+        $animal->species = ucwords($request->input('species'));
         $animal->img_url = $filenameForSave;
 
         $animal->save();
@@ -138,11 +138,11 @@ class AnimalsController extends Controller
         //create animal
         $animal = Animal::find($id);
 
-        $animal->name = $request->input('name');
+        $animal->name = ucwords($request->input('name'));
         $animal->age = (int) $request->input('age');
         $animal->sex = $request->input('sex'){0};
         $animal->about = $request->input('about');
-        $animal->species = $request->input('species');
+        $animal->species = ucwords($request->input('species'));
         $animal->status = (int) $request->input('status');
         $animal->img_url = $filenameForSave;
 
