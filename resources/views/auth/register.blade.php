@@ -40,14 +40,6 @@
                         </div>
 
                         <div class="form-group row">
-                                <label for="al" class="col-md-4 col-form-label text-md-right">Access Level</label>
-    
-                                <div class="col-md-6">
-                                    <input id="al" type="number" class="form-control" name="al">
-                                </div>
-                            </div>
-
-                        <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
