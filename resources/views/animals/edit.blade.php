@@ -1,17 +1,17 @@
 @extends('layouts.app')
-
+{{-- FORM TO EDIT THE ANIMAL --}}
 @section('content')
     <h1>Edit Animal</h1>
-    {!! Form::open(['action' => ['AnimalsController@update', $animal->id], 'method' => 'POST']) !!}
+    {!! Form::open(['action' => ['AnimalsController@update', $animal->id], 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!} 
+        <div class="form-group">
+            {{Form::label('animal-img', 'Animal Img')}}
+            <br>
+            {{Form::file('animal-img')}}
+        </div>
         <div class="form-group">
             {{Form::label('name', 'Name')}}
             {{Form::text('name', $animal->name, ['class' => 'form-control', 'placeholder' => 'name'])}}
         </div>
-        {{-- <div class="form-group">
-            {{Form::label('animal-img', 'Animal Image')}}
-        </br>
-            {{Form::file("animal-img", ["class" => "form-group",])}}
-        </div> --}}
         <div class="form-group">
             {{Form::label('age', 'Age')}}
             {{Form::text('age', $animal->age, ['class' => 'form-control', 'placeholder' => 'age'])}}

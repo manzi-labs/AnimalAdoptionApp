@@ -12,6 +12,7 @@
                 <div class="card-body">
                   <h3 style="text-align:center;">Your Adoption Requests</h3>
                   <hr>
+                  {{-- if there are active requests then show below --}}
                   @if(count($requests)>0)
                   <div class="row">
                         <div class="col-sm-3">Request id</div>   
@@ -20,6 +21,7 @@
                         <div class="col-sm-3">Status</div>    
                    </div>
                    <hr>
+                   {{-- make a new row for each request --}}
                     @foreach($requests as $request)
                         <div class="row">
                             <?php  

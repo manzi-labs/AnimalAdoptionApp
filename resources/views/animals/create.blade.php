@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+{{-- FORM TO CREATE ANIMAL --}}
 @section('content')
     <h1>Add Animal</h1>
     {!! Form::open(['action' => 'AnimalsController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
@@ -12,11 +12,6 @@
             {{Form::label('name', 'Name')}}
             {{Form::text('name', '', ['class' => 'form-control', 'placeholder' => 'name'])}}
         </div>
-        {{-- <div class="form-group">
-            {{Form::label('animal-img', 'Animal Image')}}
-        </br>
-            {{Form::file("animal-img", ["class" => "form-group",])}}
-        </div> --}}
         <div class="form-group">
             {{Form::label('age', 'Age')}}
             {{Form::text('age', '', ['class' => 'form-control', 'placeholder' => 'age'])}}

@@ -11,13 +11,13 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                  <a class="nav-link" href="/UNIVERSITY/AnimalAdoptonApp/public/">Home</a>
+                  <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/UNIVERSITY/AnimalAdoptonApp/public/animals">Adoption List</a>
+                  <a class="nav-link" href="/animals">Adoption List</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/UNIVERSITY/AnimalAdoptonApp/public/contact">Contact</a>
+                    <a class="nav-link" href="/contact">Contact</a>
                 </li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
@@ -39,15 +39,15 @@
                 @else
                     @if(Auth::user()->access_level > 0) 
                     {{-- show admin tools --}}
-                        <li><a class="nav-link" href="/UNIVERSITY/AnimalAdoptonApp/public/animals/create">Add Animal</a><li>
-                        <li><a class="nav-link" href="/UNIVERSITY/AnimalAdoptonApp/public/adoptions">Adoption Requests</a></li>
+                        <li><a class="nav-link" href="/animals/create">Add Animal</a><li>
+                        <li><a class="nav-link" href="/adoptions">Adoption Requests</a></li>
                     @endif
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="/UNIVERSITY/AnimalAdoptonApp/public/dashboard">Dashboard</a>
+                            <a class="dropdown-item" href="/dashboard">Dashboard</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                               document.getElementById('logout-form').submit();">

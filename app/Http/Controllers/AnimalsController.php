@@ -116,7 +116,20 @@ class AnimalsController extends Controller
             'age' => 'required',
             'sex' => 'required',
             'about' => 'required',
-        ]);
+            'animal-img' => 'image|nullable|max:1999'
+            ]);
+    
+        if($request->hasFile('animal-img')){
+            //get full filename
+            $filename = $request->file('animal-img')->getClientOriginalName();
+            $rawName = pathinfo($filename, PATHINFO_FILENAME);
+            $rawExt = $request->file('animal-img')->getClientOriginalExtension();
+            $filenameForSave = $rawName.'-'.time().'.'.$rawExt;
+            $filenameForSave = str_replace(' ', '', $filenameForSave);
+            $path = $request->file('animal-img')->storeAs('public/animal_images', $filenameForSave);
+        } else {
+            $filenameForSave = 'defaultAnimalImg.png';
+        }
 
         //create animal
         $animal = Animal::find($id);
@@ -127,7 +140,7 @@ class AnimalsController extends Controller
         $animal->about = $request->input('about');
 
         $animal->status = (int) $request->input('status');
-        $animal->img_url = "/img/empty";
+        $animal->img_url = $filenameForSave;
 
         $animal->save();
         
