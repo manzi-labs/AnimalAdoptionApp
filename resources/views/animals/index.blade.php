@@ -10,7 +10,7 @@
     <input type="text" class="form-control" name="search" placeholder="Search...">
     <span class="input-group-btn">
         <button class="btn btn-default-sm" type="submit">
-            <i class="fa fa-search">Search</i>
+            <i class="btn btn-warning">Search</i>
         </button>
     </span>
 </div>
