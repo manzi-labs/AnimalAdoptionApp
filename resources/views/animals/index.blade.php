@@ -2,6 +2,13 @@
 
 @section('content')
     <h1>Animals</h1>
+    {!! Form::open(['action' => 'AnimalsController@search', 'method' => 'POST']) !!}
+    <div class="form-group">
+            {{Form::label('search', 'Search')}}
+            {{Form::text('search', '', ['class' => 'form-control', 'placeholder' => 'search...'])}}
+    </div>
+    {{Form::submit('Search', ['class' =>'btn btn-primary'])}}
+    {!! Form::close() !!}
     <div class="container">
     @if(count($animals) > 0)
         <div class='card-columns'>

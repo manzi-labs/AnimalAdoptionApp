@@ -25,4 +25,6 @@ Route::get('adoptions/store/{id}', 'AdoptionReqsController@store');
 
 Auth::routes();
 
+Route::get('animals/{search}', 'AnimalsController@search');
+
 Route::get('/dashboard', 'DashboardController@index');

@@ -19,6 +19,13 @@ class AnimalsController extends Controller
         return view('animals.index')->with('animals', $animals);
     }
 
+    public function search(Request $request){
+        $search = $request->input('search');
+        $animals = Animal::where('species', '=', ucwords($search));
+        array_push($animals, Animal::where('name', '=', ucwords($search)));
+        return view('animals.index')->with('animals', $animals);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
