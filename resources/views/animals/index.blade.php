@@ -3,7 +3,6 @@
 @section('content')
     <h1>Animals</h1>
     
-   
 
 {!! Form::open(['method'=>'GET','url'=>'animals','class'=>'navbar-form navbar-left','role'=>'search'])  !!} 
 <div class="input-group custom-search-form">
