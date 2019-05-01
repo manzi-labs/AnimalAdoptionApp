@@ -22,7 +22,7 @@ Route::resource('animals', 'AnimalsController');
 Route::resource('adoptions', 'AdoptionReqsController');
 
 Route::get('adoptions/store/{id}', 'AdoptionReqsController@store');
-
 Auth::routes();
+
 
 Route::get('/dashboard', 'DashboardController@index');

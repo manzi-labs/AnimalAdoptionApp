@@ -2,13 +2,18 @@
 
 @section('content')
     <h1>Animals</h1>
-    {!! Form::open(['action' => 'AnimalsController@search', 'method' => 'POST']) !!}
-    <div class="form-group">
-            {{Form::label('search', 'Search')}}
-            {{Form::text('search', '', ['class' => 'form-control', 'placeholder' => 'search...'])}}
-    </div>
-    {{Form::submit('Search', ['class' =>'btn btn-primary'])}}
+    
+    {!! Form::open(['method'=>'GET','url'=>$url,'class'=>'navbar-form navbar-left','role'=>'search'])  !!}        
+        <div class="input-group custom-search-form">
+            <input type="text" class="form-control" name="search" placeholder="Search...">
+            <span class="input-group-btn">
+                <button class="btn btn-default-sm" type="submit">
+                    <i class="fa fa-search"></i>
+                </button>
+            </span>
+        </div>
     {!! Form::close() !!}
+
     <div class="container">
     @if(count($animals) > 0)
         <div class='card-columns'>
