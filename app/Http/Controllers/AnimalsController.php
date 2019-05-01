@@ -18,7 +18,8 @@ class AnimalsController extends Controller
         $search = \Request::get('search');
         if($search != ""){
             $animals = Animal::where('species', 'like','%'.$search)->get()->toArray();
-            array_merge($animals, Animal::where('name', 'like','%'.$search)->get()->toArray());
+            $animals2 = Animal::where('name', 'like','%'.$search)->get()->toArray();
+            $animals = array_merge($animals, $animals2);
             return view('animals.index')->with('animals', $animals);
         }
         else{
