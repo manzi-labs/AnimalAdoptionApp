@@ -21,6 +21,10 @@
             {{Form::textarea('about', $animal->about, ['class' => 'form-control', 'placeholder' => 'about'])}}
         </div>
         <div class="form-group">
+            {{Form::label('species', 'Species')}}
+            {{Form::text('species', '', ['class' => 'form-control', 'placeholder' => 'species'])}}
+        </div>
+        <div class="form-group">
                 {{Form::label('sex', 'Sex')}}
                 {{Form::select('sex', ['M' => 'M', 'F' => 'F'], $animal->sex, ['class' => 'form-control'])}}
         </div>

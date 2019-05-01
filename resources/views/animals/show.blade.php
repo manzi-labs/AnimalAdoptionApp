@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>{{$animal->name}}</h1>
+<h1>{{$animal->name}} - {{$animal->species}} - {{$animal->age}}</h1>
     <div>
     <img style="width:100%" src='/storage/animal_images/{{$animal->img_url}}' >
         {{$animal->about}}

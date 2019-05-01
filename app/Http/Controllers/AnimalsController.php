@@ -44,6 +44,7 @@ class AnimalsController extends Controller
             'age' => 'required',
             'sex' => 'required',
             'about' => 'required',
+            'species' => 'required',
             'animal-img' => 'image|nullable|max:1999'
         ]);
 
@@ -67,6 +68,7 @@ class AnimalsController extends Controller
         $animal->sex = $request->input('sex'){0};
         $animal->about = $request->input('about');
         $animal->status = 0;
+        $animal->species = $request->input('species');
         $animal->img_url = $filenameForSave;
 
         $animal->save();
@@ -116,6 +118,7 @@ class AnimalsController extends Controller
             'age' => 'required',
             'sex' => 'required',
             'about' => 'required',
+            'species' => 'required',
             'animal-img' => 'image|nullable|max:1999'
             ]);
     
@@ -128,7 +131,8 @@ class AnimalsController extends Controller
             $filenameForSave = str_replace(' ', '', $filenameForSave);
             $path = $request->file('animal-img')->storeAs('public/animal_images', $filenameForSave);
         } else {
-            $filenameForSave = 'defaultAnimalImg.png';
+            $animal = Animal::find($id);
+            $filenameForSave = $animal->img_url;
         }
 
         //create animal
@@ -138,7 +142,7 @@ class AnimalsController extends Controller
         $animal->age = (int) $request->input('age');
         $animal->sex = $request->input('sex'){0};
         $animal->about = $request->input('about');
-
+        $animal->species = $request->input('species');
         $animal->status = (int) $request->input('status');
         $animal->img_url = $filenameForSave;
 
