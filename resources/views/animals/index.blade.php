@@ -23,12 +23,12 @@
         @foreach ($animals as $animal)
             @if( (int) $animal['status'] == 0 | (int) $animal['status'] == 2)
                 <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="/storage/animal_images/{{$animal->img_url}}" alt="Card image cap">
+                    <img class="card-img-top" src="/storage/animal_images/{{$animal['img_url']}}" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">{{$animal->name}} : {{$animal->species}}</h5>
-                        <p class="card-text">{{$animal->about}} Age: {{$animal->age}}</p>
-                        <small>Added on {{$animal->created_at}}</small>
-                        <a href="/animals/{{$animal->id}}" class="btn btn-primary">View</a>
+                        <h5 class="card-title">{{$animal['name']}} : {{$animal['species']}}</h5>
+                        <p class="card-text">{{$animal['about']}} Age: {{$animal['age']}}</p>
+                        <small>Added on {{$animal['created_at']}}</small>
+                        <a href="/animals/{{$animal['id']}}" class="btn btn-primary">View</a>
                     </div>
                 </div>
             @endif
