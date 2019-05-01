@@ -10,7 +10,7 @@ use App\User;
     <div class='row'>
         <div class='col-sm-3'>
             <div>
-                <img style="max-width:100%" src='/UNIVERSITY/AnimalAdoptonApp/public/storage/animal_images/{{Animal::find((int) $request->animal_id)->img_url}}' >
+                <img style="max-width:100%" src='/storage/animal_images/{{Animal::find((int) $request->animal_id)->img_url}}' >
                 <hr>
                 {{Animal::find((int) $request->animal_id)->about}}
             </div>

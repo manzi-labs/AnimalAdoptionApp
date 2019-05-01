@@ -6,7 +6,7 @@ use App\Animal;
 @section('content')
     <h1>{{Animal::find((int) $request->animal_id)->name}}</h1>
     <div>
-    <img style="width:100%" src='/UNIVERSITY/AnimalAdoptonApp/public/storage/animal_images/{{Animal::find((int) $request->animal_id)->img_url}}' >
+    <img style="width:100%" src='/storage/animal_images/{{Animal::find((int) $request->animal_id)->img_url}}' >
         {{Animal::find((int) $request->animal_id)->about}}
     </div>
     <hr>

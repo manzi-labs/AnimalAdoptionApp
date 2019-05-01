@@ -14,12 +14,12 @@ use App\Animal;
             @foreach ($requests as $request)
                 @if((int)$request->status == 0)
                 <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="/UNIVERSITY/AnimalAdoptonApp/public/storage/animal_images/{{Animal::find((int) $request->animal_id)->img_url}}" alt="Card image cap">
+                <img class="card-img-top" src="/storage/animal_images/{{Animal::find((int) $request->animal_id)->img_url}}" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">{{$request->name}}</h5>
                             <p class="card-text">status: {{$request->status}}</p>
                             <small>Added on {{$request->created_at}}</small>
-                            <a href="/UNIVERSITY/AnimalAdoptonApp/public/adoptions/{{$request->id}}" class="btn btn-primary">View</a>
+                            <a href="/adoptions/{{$request->id}}" class="btn btn-primary">View</a>
                         </div>
                     </div>
                 @endif
@@ -32,12 +32,12 @@ use App\Animal;
             @foreach ($requests as $request)
                 @if((int)$request->status == 1)
                 <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="/UNIVERSITY/AnimalAdoptonApp/public/storage/animal_images/{{Animal::find((int) $request->animal_id)->img_url}}" alt="Card image cap">
+                        <img class="card-img-top" src="/storage/animal_images/{{Animal::find((int) $request->animal_id)->img_url}}" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">{{$request->name}}</h5>
                                     <p class="card-text">status: {{$request->status}}</p>
                                     <small>Added on {{$request->created_at}}</small>
-                                    <a href="/UNIVERSITY/AnimalAdoptonApp/public/adoptions/{{$request->id}}" class="btn btn-primary">View</a>
+                                    <a href="/adoptions/{{$request->id}}" class="btn btn-primary">View</a>
                                 </div>
                             </div>
                 @endif
@@ -50,12 +50,12 @@ use App\Animal;
             @foreach ($requests as $request)
                 @if((int)$request->status == 2)
                 <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="/UNIVERSITY/AnimalAdoptonApp/public/storage/animal_images/{{Animal::find((int) $request->animal_id)->img_url}}" alt="Card image cap">
+                    <img class="card-img-top" src="/storage/animal_images/{{Animal::find((int) $request->animal_id)->img_url}}" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">{{$request->name}}</h5>
                                 <p class="card-text">status: {{$request->status}}</p>
                                 <small>Added on {{$request->created_at}}</small>
-                                <a href="/UNIVERSITY/AnimalAdoptonApp/public/adoptions/{{$request->id}}" class="btn btn-primary">View</a>
+                                <a href="/adoptions/{{$request->id}}" class="btn btn-primary">View</a>
                             </div>
                         </div>
                 @endif
