@@ -21,7 +21,7 @@
     @if(count($animals) > 0)
         <div class='card-columns'>
         @foreach ($animals as $animal)
-            @if( (int) $animal->status == 0 | (int) $animal->status == 2)
+            @if( (int) $animal[status] == 0 | (int) $animal[status] == 2)
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="/storage/animal_images/{{$animal->img_url}}" alt="Card image cap">
                     <div class="card-body">
